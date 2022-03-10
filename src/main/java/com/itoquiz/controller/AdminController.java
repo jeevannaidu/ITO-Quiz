@@ -96,5 +96,13 @@ public class AdminController {
 		return "Deleted the Question -- " + questionId;
 
 	}
+	
+	@RequestMapping(value = "/deleteMultipleQuestions", params = "questionIds", method = RequestMethod.DELETE)
+	@ResponseBody
+	public String deleteMultipleQuestions(@RequestParam List<Integer> questionIds) {
+		
+		quizServiceImpl.deleteMultipleByIds(questionIds);
+	    return "Deleted questionIds = " + questionIds.toString();
+	}
 
 }
