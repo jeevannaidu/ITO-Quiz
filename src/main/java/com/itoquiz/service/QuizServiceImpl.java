@@ -73,6 +73,10 @@ public class QuizServiceImpl{
 		quizRepository.deleteById(id);
 	}
 	
+	public void deleteMultipleByIds(Iterable<Integer> questionIds) {
+		quizRepository.deleteAllById(questionIds);
+	}
+	
 	/* ************************************************ Validaiton  ******************************************************************************** */
 	
 	public HashMap<Integer, Integer> answerSheet(){
